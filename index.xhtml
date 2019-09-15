@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+
+    </h:head>
+
+    <h:body>
+
+        <p:panel>
+
+            
+            <h:form id="frmIndex" prependId="false">
+            
+                <p:outputLabel value="Ingrese el usuario:" />
+                <p:inputText value="#{mbIndex.usuarioLogin.nombre}"/>
+                
+                <br/>
+                <p:outputLabel value="Ingrese la clave:" />
+                <p:password value="#{mbIndex.usuarioLogin.password}"/>
+                <br/>
+                <p:commandButton value="Login" action="#{mbIndex.validarUsuarioLogin()}"/>
+            </h:form>
+
+        </p:panel>
+
+
+
+
+
+    </h:body>
+</html>

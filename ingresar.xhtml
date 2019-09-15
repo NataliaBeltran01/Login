@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+
+    </h:head>
+
+    <h:body>
+
+        <p:panel>
+
+            
+            <h:form id="frmIngresar" prependId="false">
+                <p:growl autoUpdate="true" id="mensajes" showDetail="true"/>
+                <p:outputLabel value="Nombre del plato:" />
+                <p:inputText value="#{mbIngresarMenu.menuIngresar.nombreplato}"/>
+                
+                <br/>
+                <p:outputLabel value="Cantidad de calorias:" />
+                <p:inputText value="#{mbIngresarMenu.menuIngresar.calorias}"/>
+                
+                <br/>
+                <p:outputLabel value="Tipo de plato:" />
+                <p:selectOneMenu value="#{mbIngresarMenu.menuIngresar.fktipoplato.idtipoplato}">
+                    <f:selectItem itemLabel="Seleccione" itemValue="-1"/>
+                    <f:selectItems value="#{mbIngresarMenu.listaTipoPlato}" var="plato"
+                                   itemLabel="#{plato.nombretipoplato}" itemValue="#{plato.idtipoplato}" />
+                </p:selectOneMenu>
+                
+                <br/>
+                <p:commandButton value="Ingresar Menu" action="#{mbIngresarMenu.ingresarNuevoMenu()}"
+                                 update="frmIngresar"/>
+                  
+            </h:form>
+
+        </p:panel>
+
+
+
+
+
+    </h:body>
+</html>
